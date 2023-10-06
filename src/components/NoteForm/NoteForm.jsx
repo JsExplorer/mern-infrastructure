@@ -10,7 +10,7 @@ export default function NoteForm({ notes, setNotes }) {
 
   async function handleSubmit(evt) {
     evt.preventDefault();
-    const newNote = await addNote(text);
+    const newNote = await addNote({text: text});
     setNotes([...notes, newNote]);
     setText("");
   }

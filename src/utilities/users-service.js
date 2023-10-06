@@ -74,11 +74,11 @@ export function logOut() {
 
 export async function getNotes() {
   const notesData = await usersAPI.fetchNotes();
-  console.log(notesData);
   return notesData;
 }
 
-export async function addNote() {
-  const notes = await usersAPI.addNewNote();
+export async function addNote(note) {
+  const notes = await usersAPI.addNewNote(note);
+  console.log(notes);
   return notes;
 }

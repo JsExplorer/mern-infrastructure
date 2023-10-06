@@ -33,7 +33,7 @@ export default function NotePage({ }) {
         ) : (
         <ul>
             {notes.map((note)=> (
-                <li>
+                <li key={note._id}>
                     <p>{note.text}</p>
                     <p>{new Date(note.createdAt).toLocaleString()}</p>
                 </li>
