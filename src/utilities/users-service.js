@@ -71,3 +71,14 @@ export function getUser() {
 export function logOut() {
   localStorage.removeItem("token");
 }
+
+export async function getNotes() {
+  const notesData = await usersAPI.fetchNotes();
+  console.log(notesData);
+  return notesData;
+}
+
+export async function addNote() {
+  const notes = await usersAPI.addNewNote();
+  return notes;
+}

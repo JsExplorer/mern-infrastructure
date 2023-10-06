@@ -44,3 +44,11 @@ export async function logIn(userData) {
 export function checkToken() {
   return sendRequest(`${BASE_URL}/check-token`);
 }
+
+export const fetchNotes = () => {
+  return sendRequest("/api/notes");
+};
+
+export const addNewNote = (note) => {
+  return sendRequest("/api/notes", "POST", note);
+};

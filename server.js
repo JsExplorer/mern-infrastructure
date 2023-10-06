@@ -7,6 +7,7 @@ const logger = require('morgan');
 const debug = require('debug')('mern:server');
 const usersRouter=require('./routes/api/users')
 const checkToken=require('./config/checkToken')
+const notesRouter=require('./routes/api/notes')
 
 //* app
 const app = express();
@@ -18,10 +19,10 @@ app.use(express.static(path.join(__dirname, "dist")));
 app.use(checkToken.checkToken);
 app.use("/api/users", usersRouter);
 app.use(express.static(path.join(__dirname, 'build')));
-// app.use(require('./config/checkToken'));
+app.use("/api/notes", notesRouter);
 
 //* routes
-app.get('/api', (req, res) => {
+app.get('/api', (req, res) => { 
     res.send('Hello world!');
 })
 // Put API routes here, before the "catch all" route

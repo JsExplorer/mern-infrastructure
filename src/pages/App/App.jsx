@@ -1,7 +1,6 @@
 import debug from 'debug';
 import { useState } from 'react';
-import NewOrderPage from '../NewOrderPage/NewOrderPage';
-import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
+import NotePage from '../NotePage/NotePage';
 import AuthPage from '../AuthPage/AuthPage';
 import { Routes, Route } from 'react-router-dom'
 import NavBar from '../../components/NavBar/NavBar';
@@ -21,8 +20,7 @@ export default function App() {
         <>
           <NavBar user={user} setUser={setUser}/>
           <Routes>
-            <Route path="/orders/new" element={<NewOrderPage />} />
-            <Route path="/orders" element={<OrderHistoryPage />} />
+            <Route path="/" element={<NotePage />} />
           </Routes>
         </>
       ) : (
